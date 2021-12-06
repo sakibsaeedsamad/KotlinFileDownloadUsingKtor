@@ -92,12 +92,9 @@ class MainFragment : Fragment() {
                 // get headers
                 val headers: Headers = response.headers()
                 // get header value
-                val cookie = headers["Content-Disposition"].toString()
+                val fileName: String = headers["File-Name"].toString()
 
-
-                val fileName: String = cookie.substring(cookie.indexOf("=") + 2, cookie.length-1)
-
-                Log.d("Content-Disposition", "onResponse: $fileName ")
+                Log.d("File-Name", "onResponse: $fileName ")
                 val folder = context?.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 
                 val file = File(folder, fileName)
@@ -119,7 +116,7 @@ class MainFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
-                Log.d("Content-Type", "onResponse: $t ")
+                Log.d("TAG", "onResponseError: $t ")
 
             }
 
