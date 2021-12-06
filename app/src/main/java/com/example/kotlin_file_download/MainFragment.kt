@@ -37,9 +37,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.R.string
-
-
-
+import okhttp3.ResponseBody
 
 
 class MainFragment : Fragment() {
@@ -51,7 +49,7 @@ class MainFragment : Fragment() {
     private val PERMISSION_REQUEST_CODE = 1
     private val DOWNLOAD_FILE_CODE = 2
 
-    private val fileUrl = "http://10.11.201.180:8080/AgentBanking/NoticeDownloadS?id=133"//"https://css4.pub/2017/newsletter/drylab.pdf"//
+    private val fileUrl = "http://10.11.201.180:8080/AgentBanking/NoticeDownloadS?id=134"//"https://css4.pub/2017/newsletter/drylab.pdf"//
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -84,13 +82,13 @@ class MainFragment : Fragment() {
     private  fun setDownloadButtonClickListener() {
 
 
-        val call: Call<String>? = RetrofitClient
+        val call: Call<ResponseBody>? = RetrofitClient
             .instance
             ?.aPI
-            ?.getFileType("133")
-        call?.enqueue(object: Callback<String> {
+            ?.getFileType("134")
+        call?.enqueue(object: Callback<ResponseBody> {
 
-            override fun onResponse(call: Call<String?>, response: Response<String?>) {
+            override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
                 // get headers
                 val headers: Headers = response.headers()
                 // get header value
@@ -120,7 +118,7 @@ class MainFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<String?>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
                 Log.d("Content-Type", "onResponse: $t ")
 
             }
