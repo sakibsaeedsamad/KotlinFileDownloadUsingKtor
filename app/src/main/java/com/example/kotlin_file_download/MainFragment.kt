@@ -49,7 +49,7 @@ class MainFragment : Fragment() {
     private val PERMISSION_REQUEST_CODE = 1
     private val DOWNLOAD_FILE_CODE = 2
 
-    private val fileUrl = "http://10.11.201.180:8080/AgentBanking/NoticeDownloadS?id=134"//"https://css4.pub/2017/newsletter/drylab.pdf"//
+    private val fileUrl = "http://10.11.201.180:8081/AgentBanking/NoticeDownloadS?id=134"//"https://css4.pub/2017/newsletter/drylab.pdf"//
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

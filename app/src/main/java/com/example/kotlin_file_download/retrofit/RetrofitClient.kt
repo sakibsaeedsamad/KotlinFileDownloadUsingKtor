@@ -34,7 +34,7 @@ class RetrofitClient private constructor() {
         .create()
 
     companion object {
-        private const val BASE_URL = "http://10.11.201.180:8080/AgentBanking/"
+        private const val BASE_URL = "http://10.11.201.180:8081/AgentBanking/"
         private var retrofitClient: RetrofitClient? = null
 
         @get:Synchronized
